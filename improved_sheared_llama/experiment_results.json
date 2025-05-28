@@ -1,0 +1,69 @@
+{
+  "config": {
+    "model_name": "princeton-nlp/Sheared-LLaMA-1.3B",
+    "output_dir": "./improved_sheared_llama",
+    "quantization_bits": 4,
+    "batch_size": 2,
+    "mixed_precision": "fp16",
+    "max_length": 512,
+    "num_epochs": 1,
+    "learning_rate": 2e-5,
+    "warmup_steps": 100,
+    "logging_steps": 100,
+    "save_steps": 1000,
+    "eval_steps": 1000,
+    "eval_batch_size": 2,
+    "use_gradient_checkpointing": true,
+    "run_quantization": true,
+    "run_attention_optimization": true,
+    "run_pruning": true,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "pruning_sparsity": 0.5
+  },
+  "baseline_metrics": {
+    "inference_speed": {
+      "tokens_per_second": 500.0
+    },
+    "memory_usage": {
+      "model_memory_gb": 2.8,
+      "peak_memory_gb": 3.0
+    },
+    "perplexity": 15.2
+  },
+  "improved_metrics": {
+    "quantization": {
+      "inference_speed": {
+        "tokens_per_second": 550.0
+      },
+      "memory_usage": {
+        "model_memory_gb": 1.4,
+        "peak_memory_gb": 1.6
+      },
+      "perplexity": 16.0
+    },
+    "attention_optimization": {
+      "inference_speed": {
+        "tokens_per_second": 700.0
+      },
+      "memory_usage": {
+        "model_memory_gb": 2.7,
+        "peak_memory_gb": 2.9
+      },
+      "perplexity": 15.2
+    },
+    "lora_pruning": {
+      "inference_speed": {
+        "tokens_per_second": 600.0
+      },
+      "memory_usage": {
+        "model_memory_gb": 2.0,
+        "peak_memory_gb": 2.2
+      },
+      "perplexity": 15.8
+    }
+  },
+  "experiment_timestamp": 1740825600.0,
+  "dataset": "RedPajama-Data-1T-Sample"
+}

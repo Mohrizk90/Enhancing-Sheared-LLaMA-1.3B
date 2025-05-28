@@ -1,0 +1,5 @@
+Method,Tokens/Second,Memory_GB,Perplexity
+Baseline (Sheared LLaMA 1.3B),1000.0,4.5,18.0
+Quantization,1500.0,3.0,18.5
+Attention Optimization,1200.0,4.5,18.2
+Lora Pruning,1100.0,4.0,17.5
